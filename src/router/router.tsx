@@ -1,11 +1,11 @@
-import Radio from '../pages/Explore/Radio';
+import Explore from '../pages/Explore';
 
 
 const routers = [
   {
     path: '/',
     exact: true,
-    component: Radio
+    component: Explore
   }
 ];
 
