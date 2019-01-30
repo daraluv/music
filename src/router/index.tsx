@@ -1,11 +1,17 @@
-import Rank from '../pages/Explore/Rank';
+import * as React from 'react';
+import routers from './router';
+import { Route } from 'react-router';
+import { BrowserRouter, Switch } from 'react-router-dom';
 
-const routers = [
-  {
-    path: '/',
-    exact: true,
-    component: Rank
-  }
-];
+const AppRouter = () => (
+  <BrowserRouter>
+    <Switch>
+      {routers.map((router, key) => (
+        <Route path={router.path} exact={router.exact} component={router.component} key={key} />
+      ))}
+    </Switch>
+  </BrowserRouter>
+)
 
-export default routers;
+
+export default AppRouter;
