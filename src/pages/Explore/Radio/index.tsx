@@ -1,9 +1,6 @@
-/**
- * Home
- */
 import * as React from 'react';
 import { NavLink, Route, Redirect } from 'react-router-dom';
-
+import Banner from '../banner'
 import './style.css';
 
 class Radio extends React.Component {
@@ -15,6 +12,7 @@ class Radio extends React.Component {
     return (
       <div className="home_container">
       主播电台
+      <Banner></Banner>
       </div>
     )
   }

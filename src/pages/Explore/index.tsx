@@ -10,15 +10,16 @@ import Recommend from './Recommend';
 class Explore extends React.Component {
   componentDidMount() {
     document.title = '主播电台';
+    console.log(Radio)
   }
 
   render() {
     return (
       <div className="home_container">
         <div className="content">
-          <Route exact path="/Explore/Recommend" render={() => <Redirect to="/Explore/Recommend" />} />
-          <Route exact path="/home/recommend" component={Recommend} />
-          <Route exact path="/home/Radio" component={Radio} />
+          <Route exact path="/Explore" render={() => <Redirect to="/Explore/Recommend" />} />
+          <Route exact path="/Explore/recommend" component={Recommend} />
+          <Route exact path="/Explore/Radio" component={Radio} />
         </div>
         <div className="nav">
           <NavLink to="/Explore/Recommend" activeClassName="active">个性推荐</NavLink>
