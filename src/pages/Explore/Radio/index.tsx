@@ -1,18 +1,20 @@
 import * as React from 'react';
 import { NavLink, Route, Redirect } from 'react-router-dom';
 import Banner from '../banner'
-import './style.css';
+import './style.css'
 
 class Radio extends React.Component {
   componentDidMount() {
     document.title = '主播电台';
+    console.log(Banner)
   }
 
   render() {
     return (
-      <div className="home_container">
+      <div className="home-container">
       主播电台
-      <Banner></Banner>
+        <div className="category-items">
+        </div>
       </div>
     )
   }

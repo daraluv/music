@@ -1,6 +1,3 @@
-/**
- * Home
- */
 import * as React from 'react';
 import { NavLink, Route, Redirect } from 'react-router-dom';
 import Radio from './Radio';

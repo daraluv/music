@@ -1,5 +1,7 @@
 import Explore from '../pages/Explore';
 import Radio from '../pages/Explore/Radio';
+import Recommend from '../pages/Explore/Recommend';
+
 
 const routers = [
   {
@@ -12,6 +14,12 @@ const routers = [
     exact: true,
     component: Radio
   },
+  {
+    path: '/Explore/Recommend',
+    exact: true,
+    component: Recommend
+  },
+  
 
 ];
 

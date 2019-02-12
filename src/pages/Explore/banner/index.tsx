@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { NavLink, Route, Redirect } from 'react-router-dom';
 import ReactSwipe from 'react-swipe'
-import './style.css';
+import './style.css'
+
 
 type IProps = {}
 
@@ -21,13 +22,12 @@ export default class Banner extends React.Component<IProps, IState> {
     return this.state.index === index ? 'dot active' : 'dot'
   }
 
-
-
   render() {
-    const children = this.props.children ? this.props.children : <div />
+    const children = this.props.children ? this.props.children : <div className='box' />;
+    console.log(children)
     return (
       <div className="swipe-wrapper">
-        <ReactSwipe >
+        <ReactSwipe>
           {children}
         </ReactSwipe>
       </div>
