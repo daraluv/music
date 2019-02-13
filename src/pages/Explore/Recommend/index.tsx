@@ -13,6 +13,7 @@ const Recommend: React.SFC<IProps> = ({  normalizer, title }) => {
   return (
     <div>
       <Banner></Banner>
+      <h3 className="floor-title">推荐歌单</h3>
       <Matrix width={33} >
         {lists.slice(0, 6).map((list: any, index: number) => {
           return (
