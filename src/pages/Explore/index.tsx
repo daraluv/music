@@ -7,12 +7,14 @@ import Recommend from './Recommend';
 class Explore extends React.Component {
   componentDidMount() {
     document.title = '主播电台';
-    console.log(Radio)
   }
 
   render() {
     return (
       <div className="home_container">
+        <div className="search-content">
+          <input type="text" defaultValue="最新歌曲"/>
+        </div>
         <div className="content">
           <Route exact path="/Explore" render={() => <Redirect to="/Explore/Recommend" />} />
           <Route exact path="/Explore/recommend" component={Recommend} />
