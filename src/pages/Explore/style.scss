@@ -1,0 +1,32 @@
+.swipe-wrapper{
+  min-height: 100px;
+  background:#ccc;
+}
+
+.slide-nav{
+  line-height: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  list-style-type: none;
+
+  a{
+    font-size: 14px;
+    line-height: 25px;
+  }
+
+  .active{
+    color:#e24e48;
+     
+    &::after{
+      content: "";
+      width: 70%;
+      height: 2px;
+      display: block;
+      margin: 0 auto;
+      background:#e24e48;
+    }
+  }
+
+}

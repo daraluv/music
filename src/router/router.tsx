@@ -1,7 +1,10 @@
 import Home from '../pages';
+import Account from '../pages/Account';
 import Explore from '../pages/Explore';
+import Friends from '../pages/Friends';
 import Radio from '../pages/Explore/Radio';
 import Recommend from '../pages/Explore/Recommend';
+
 
 
 const routers = [
@@ -10,16 +13,31 @@ const routers = [
     exact: true,
     component: Home
   },
-  {
-    path: '/Explore',
-    exact: true,
-    component: Explore
-  },
-  {
-    path: '/Explore/Recommend',
-    exact: true,
-    component: Recommend
-  },
+  // {
+  //   path: '/Account',
+  //   exact: true,
+  //   component: Account
+  // },
+  // {
+  //   path: '/Explore',
+  //   exact: false,
+  //   component: Explore
+  // },
+  // {
+  //   path: '/Friends',
+  //   exact: true,
+  //   component: Friends
+  // },
+  // {
+  //   path: '/Explore/Radio',
+  //   exact: false,
+  //   component: Radio
+  // },
+  // {
+  //   path: '/Explore/Recommend',
+  //   exact: false,
+  //   component: Recommend
+  // },
   
 
 ];
