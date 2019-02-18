@@ -10,34 +10,15 @@ type IProps = {
   id?: string
 }
 
-type IState = {
-  isLoading: boolean
-}
-
-class Cover extends React.Component<IProps, IState> {
-
+class Cover extends React.Component<IProps> {
   state = {
     isLoading: true
-  }
-
-  componentDidUpdate() {
-    if (this.state.isLoading === true) {
-      const newImg = new Image()
-      newImg.onload = () => {
-        this.setState({
-          isLoading: false
-        })
-      }
-      if (this.props.coverImg) {
-        newImg.src = this.props.coverImg
-      }
-    }
   }
 
   render() {
     const { coverImg, path, playCount, listName } = this.props;
     return (
-      <div>
+      <div className="cover-items">
         <Link className="slideNav" to={{
            pathname: path,
            state: {
@@ -46,12 +27,13 @@ class Cover extends React.Component<IProps, IState> {
             playCount
            }
         }}>
+        <img src={coverImg} className="coverImg"/>
          {coverImg ? (
             <React.Fragment>
-              <p className={listName}>{listName}</p>
-              <div className="playCountWrapper">
+              <p className="listName">{listName}</p>
+              {/* <div className="playCountWrapper">
                 <span>{playCount}</span>
-              </div>
+              </div> */}
             </React.Fragment>
           ) : null}
         </Link>

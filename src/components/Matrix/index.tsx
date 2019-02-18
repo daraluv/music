@@ -34,8 +34,8 @@ const Matrix: React.SFC<IProps> = ({ children, cols, width }) => {
 
   const colElements = rows.map((row, index) => {
     return (
-      <div key={index} className="list">
-        244{row}
+      <div key={index}  className="cover-content">
+        {row}
       </div>
     )
   })

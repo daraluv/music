@@ -10,7 +10,7 @@ type IState = {
   index: number
 }
 
-export default class Banner extends React.Component<IProps, IState> {
+export default class Banner extends React.Component{
   swipe: ReactSwipe | null = null
 
   state = {
@@ -31,7 +31,6 @@ export default class Banner extends React.Component<IProps, IState> {
     return this.state.index === index ? 'dot active' : 'dot'
   }
 
-  
 
   render() {
     const children = this.props.children ? this.props.children : <div className='box' />;
@@ -39,7 +38,9 @@ export default class Banner extends React.Component<IProps, IState> {
     return (
       <div className="swipe-wrapper">
         <ReactSwipe swipeOptions={this.swipeOpt}>
+          <div>
           {children}
+          </div>
         </ReactSwipe>
       </div>
     )

@@ -1,6 +1,9 @@
+import http from "../utils/http";
+import host from "../utils/host";
+
 const NETEASE_API= {
-    banner: '/banner', // 轮播图
-    recommendList: '/personalized', // 推荐歌单
+    bannerList: () => http.get(`${host}/banner`), // 轮播图
+    recommendList: () => http.get(`${host}/personalized`), // 推荐歌单
     recommendSong: '/personalized/newsong', // 推荐歌曲
     // 歌单详情
     playlist: {

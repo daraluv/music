@@ -1,5 +1,13 @@
-.row{
+.cover-content{
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+}
+
+.listName{
+  width: 100%;
+  line-height: 20px;
+  max-height: 40px;
+  display: block;
+  overflow: hidden;
 }
