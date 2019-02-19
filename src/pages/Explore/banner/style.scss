@@ -1,13 +1,36 @@
 .swipe-wrapper{
-  min-height: 100px;
-  background:#ccc;
+  width: 100%;
+  min-height: 130px;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden; 
 }
 
 .slideItem{
 
   img{
     width: 100%;
-    max-height: 100px;
     display: block;
+  }
+}
+
+.swipe-dots {
+  position: absolute;
+  width: 100%;
+  bottom: 1.12px;
+  bottom: 3px;
+  text-align: center;
+
+  span{
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%; 
+    margin-right: 6px;
+    background: #d6d7d8;
+  }
+
+  .active{
+    background: #f6443a;
   }
 }

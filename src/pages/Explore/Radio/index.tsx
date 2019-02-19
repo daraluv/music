@@ -1,20 +1,37 @@
 import * as React from 'react';
-import { NavLink, Route, Redirect } from 'react-router-dom';
-import Banner from '../banner'
-import './style.css'
+import {Link} from 'react-router-dom'
+import Banner from '../banner';
+import api from "../../../api/api"
+import RadioRecommend from "./RadioRecommend"
+import './style.scss'
+
+let bannerList:any = [];
 
 class Radio extends React.Component {
-  componentDidMount() {
+
+  componentWillMount() {
     document.title = '主播电台';
-    console.log(Banner)
+    this.getBannerList();
+  }
+
+  public getBannerList = async () => {
+    const res = await api.bannerList();
+    bannerList = res.banners;
   }
 
   render() {
     return (
       <div className="home-container">
-      主播电台
-        <div className="category-items">
-        </div>
+        <Banner>
+          {bannerList.map((item: any, index: number) => {
+            return (
+              <div key={index}>
+              <img src={item.imageUrl}/>
+              </div>
+            )
+          })}
+        </Banner>
+        <RadioRecommend></RadioRecommend>
       </div>
     )
   }

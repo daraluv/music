@@ -4,6 +4,7 @@ import host from "../utils/host";
 const NETEASE_API= {
     bannerList: () => http.get(`${host}/banner`), // 轮播图
     recommendList: () => http.get(`${host}/personalized`), // 推荐歌单
+    radioList:() => http.get(`${host}/personalized/djprogram`), 
     recommendSong: '/personalized/newsong', // 推荐歌曲
     // 歌单详情
     playlist: {

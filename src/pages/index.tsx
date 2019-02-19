@@ -5,6 +5,7 @@ import Video from '../pages/Video';
 import Mine from '../pages/Mine';
 import Friends from '../pages/Friends';
 import Account from '../pages/Account';
+import Play from '../pages/Play';
 import './style.scss'
 import './common.scss'
 
@@ -24,6 +25,7 @@ class Home extends React.Component {
             <Route path="/Mine" component={Mine} />
             <Route path="/Friends" component={Friends} />
             <Route path="/Account" component={Account} />
+            <Route path="/Play" component={Play} />
             <Redirect to="/Explore" /> 
           </Switch>
         </div>
