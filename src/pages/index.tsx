@@ -28,6 +28,7 @@ class Home extends React.Component {
             <Route path="/Play" component={Play} />
             <Redirect to="/Explore" /> 
           </Switch>
+           
         </div>
         <div className="bottom-nav">
           <NavLink to="/Explore" activeClassName="active">发现</NavLink>
