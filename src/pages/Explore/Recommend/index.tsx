@@ -7,7 +7,7 @@ import api from "../../../api/api"
 
 class Recommend extends React.Component {
   bannerList:any = [];
-  state={
+  state = {
     lists: []
   }
 

@@ -11,9 +11,7 @@ const NETEASE_API= {
       path: '/playlist/detail?id=:id'
     },
     // 歌曲URL
-    songUrl: {
-      path: '/music/url?id=:ids'
-    },
+    songUrl:() => http.get(`${host}/song/url?id=:ids`), 
     // 歌曲详情
     songDetail: {
       path: '/song/detail?ids=:ids'
