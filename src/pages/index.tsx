@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { BrowserRouter as Router, Route, NavLink, Redirect,Switch} from "react-router-dom";
 import { Provider } from 'mobx-react';
-import * as store from '../store/store';
+import * as store from '../store';
 import Explore from '../pages/Explore';
 import Video from '../pages/Video';
 import Mine from '../pages/Mine';

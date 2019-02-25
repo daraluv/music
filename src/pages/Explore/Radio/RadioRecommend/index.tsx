@@ -1,8 +1,9 @@
-import * as React from 'react';
+import * as React from 'react'
 import {Link} from 'react-router-dom'
+import { withRouter } from 'react-router'
 import api from "../../../../api/api"
 
-class RadioRecommend extends React.Component {
+class RadioRecommend extends React.Component<any> {
    state = {
     radioList:[]
    }

@@ -1,10 +1,11 @@
-import * as React from 'react';
+import React from 'react';
+import {MusicStore} from '../../store/store';
+import {inject, observer} from 'mobx-react';
+import { toJS } from 'mobx';
 import SongCover from './SongCover';
 import ControlBtn from './ControlBtn';
-import MusicInfos from './MusicInfos'
-import {inject, observer} from 'mobx-react';
-import {MusicStore} from '../../store/store';
-import { toJS } from 'mobx';
+import MusicInfos from './MusicInfos';
+import { withRouter } from 'react-router';
 import './style.scss';
 
 interface Props {}
@@ -14,15 +15,16 @@ interface InjectedProps extends Props {
 
 @inject('MusicStore')
 @observer
-class playMusic extends React.Component <Props, any>{
+class playMusic extends React.Component <any>{
     get injected() {
       return this.props as InjectedProps;
     }
 
     componentDidMount() {
       const { MusicStore } = this.injected;
-      console.log(MusicStore, MusicStore.songInfos)
-      // MusicStore.getSongUrl();
+      console.log(MusicStore)
+      const id = this.props.location.state.id;
+      MusicStore.getSongUrl(405998841);
     }
     
     getIsPlaying = () => {
@@ -42,7 +44,8 @@ class playMusic extends React.Component <Props, any>{
     }
 
     render() {
-      // const { HomeStore } = this.props;
+      const { MusicStore } = this.injected;
+      console.log(0,MusicStore.songInfos.url)
       return (
         <div className='playing-wrapper'>
           <MusicInfos />
@@ -51,10 +54,10 @@ class playMusic extends React.Component <Props, any>{
             switchPrevSong={this.handleSwitchPrev}
             switchNextSong={this.handleSwitchNext}
             switchPlayState={this.handleSwitchPlayState}/>
-           <audio src='' autoPlay={true} />
+           <audio src={MusicStore.songInfos.url} autoPlay={true} />
         </div>
       )
     }
 }
 
-export default playMusic;
+export default withRouter(playMusic);
