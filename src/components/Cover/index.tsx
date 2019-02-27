@@ -16,12 +16,14 @@ class Cover extends React.Component<IProps> {
   }
 
   render() {
-    const { coverImg, path, playCount, listName } = this.props;
+    const { coverImg, path, playCount, listName, id} = this.props;
+   console.log(path)
     return (
       <div className="cover-items">
         <Link className="slideNav" to={{
            pathname: path,
            state: {
+             id: id,
             picUrl: coverImg,
             name: listName,
             playCount

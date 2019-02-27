@@ -42,23 +42,25 @@ class Recommend extends React.Component {
           )
         })}
         </Banner>
-        <h3 className="floor-title">推荐歌单</h3>
-        <Matrix width={33}>
-          {lists.slice(0, 6).map((list: any, index: number) => {
-            return (
-              <Cover 
-                key={index}
-                coverImg={list.picUrl}
-                playCount={list.playCount}
-                path={list.path}
-                listName={list.name}
-                id={list.id}
-              >
-                {list.id}
-              </Cover>
-            )
-          })}
-        </Matrix>
+        <div className="floor-content">
+          <h3 className="floor-title">推荐歌单</h3>
+          <Matrix width={33}>
+            {lists.slice(0, 6).map((list: any, index: number) => {
+              return (
+                <Cover 
+                  key={index}
+                  coverImg={list.picUrl}
+                  playCount={list.playCount}
+                  path={'/SongList'}
+                  listName={list.name}
+                  id={list.id}
+                >
+                  {list.id}
+                </Cover>
+              )
+            })}
+          </Matrix>
+        </div>
       </div>
     )
   }

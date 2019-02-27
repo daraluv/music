@@ -15,16 +15,16 @@ interface InjectedProps extends Props {
 
 @inject('MusicStore')
 @observer
-class playMusic extends React.Component <any>{
+class PlayMusic extends React.Component <any>{
     get injected() {
       return this.props as InjectedProps;
     }
 
     componentDidMount() {
       const { MusicStore } = this.injected;
-      console.log(MusicStore)
       const id = this.props.location.state.id;
-      MusicStore.getSongUrl(405998841);
+      console.log('接收的歌曲id',id)
+      MusicStore.getSongUrl(id);//405998841
     }
     
     getIsPlaying = () => {
@@ -45,11 +45,11 @@ class playMusic extends React.Component <any>{
 
     render() {
       const { MusicStore } = this.injected;
-      console.log(0,MusicStore.songInfos.url)
+      console.log(0,MusicStore)
       return (
         <div className='playing-wrapper'>
           <MusicInfos />
-          <SongCover/>
+          <SongCover />
           <ControlBtn isPlaying={this.getIsPlaying()}
             switchPrevSong={this.handleSwitchPrev}
             switchNextSong={this.handleSwitchNext}
@@ -60,4 +60,4 @@ class playMusic extends React.Component <any>{
     }
 }
 
-export default withRouter(playMusic);
+export default withRouter(PlayMusic);

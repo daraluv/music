@@ -22,13 +22,13 @@ class RadioRecommend extends React.Component<any> {
   render() {
     const {radioList} = this.state;
     return (
-      <div>
+      <div className="floor-content">
         <h3 className="floor-title">今日优选</h3>
         <div className="radio-rd-content">
          {radioList.map((item: any, index: number) => {
             return (
               <Link className="radio-items"  key={index} to={{
-                pathname:  '/play',
+                pathname:  '/SongList',
                 state: {
                   id:item.id,
                  picUrl: item.picUrl,

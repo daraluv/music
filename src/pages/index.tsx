@@ -8,6 +8,7 @@ import Mine from '../pages/Mine';
 import Friends from '../pages/Friends';
 import Account from '../pages/Account';
 import Play from '../pages/Play';
+import SongList from '../pages/SongList';
 import './style.scss'
 import './common.scss'
 
@@ -29,6 +30,7 @@ class Home extends React.Component {
               <Route path="/Friends" component={Friends} />
               <Route path="/Account" component={Account} />
               <Route path="/Play" component={Play} />
+              <Route path="/SongList" component={SongList} />
               <Redirect to="/Explore" /> 
             </Switch>
             

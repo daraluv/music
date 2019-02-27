@@ -5,11 +5,7 @@ const NETEASE_API= {
     bannerList: () => http.get(`${host}/banner`), // 轮播图
     recommendList: () => http.get(`${host}/personalized`), // 推荐歌单
     radioList:() => http.get(`${host}/personalized/djprogram`), 
-    recommendSong: '/personalized/newsong', // 推荐歌曲
-    // 歌单详情
-    playlist: {
-      path: '/playlist/detail?id=:id'
-    },
+    playlist:(id: number) => http.get(`${host}/playlist/detail?id=${id}`),
     // 歌曲URL
     songUrl:(id: number) => http.get(`${host}/song/url?id=${id}`), 
     // 歌曲详情
