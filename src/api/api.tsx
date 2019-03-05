@@ -2,6 +2,7 @@ import http from "../utils/http";
 import host from "../utils/host";
 
 const NETEASE_API= {
+    login:(email: any, password: any)=> http.get(`${host}/login?email=${email}&password=${password}`),
     bannerList: () => http.get(`${host}/banner`), // 轮播图
     recommendList: () => http.get(`${host}/personalized`), // 推荐歌单
     radioList:() => http.get(`${host}/personalized/djprogram`), 

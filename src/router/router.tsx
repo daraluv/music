@@ -1,4 +1,4 @@
-import Home from '../pages';
+import Home from '../pages/Home';
 import Account from '../pages/Account';
 import Explore from '../pages/Explore';
 import Friends from '../pages/Friends';

@@ -1,14 +1,16 @@
 import * as React from 'react';
 import { BrowserRouter as Router, Route, NavLink, Redirect,Switch} from "react-router-dom";
 import { Provider } from 'mobx-react';
-import * as store from '../store';
-import Explore from '../pages/Explore';
-import Video from '../pages/Video';
-import Mine from '../pages/Mine';
-import Friends from '../pages/Friends';
-import Account from '../pages/Account';
-import Play from '../pages/Play';
-import SongList from '../pages/SongList';
+import * as store from '../../store';
+import Explore from '../../pages/Explore';
+import Video from '../../pages/Video';
+import Mine from '../../pages/Mine';
+import Friends from '../../pages/Friends';
+import Account from '../../pages/Account';
+import Play from '../../pages/Play';
+import SongList from '../../pages/SongList';
+import Login from '../../pages/Login';
+import Player from '../../components/Player';
 import './style.scss'
 import './common.scss'
 
@@ -18,10 +20,12 @@ class Home extends React.Component {
   }
 
   render() {
+   
     return (
       <Provider {...store}>
         <Router>
         <div className="home_container">
+          <Player/>
           <div className="content"> 
             <Switch>
               <Route path="/Explore" component={Explore} />
@@ -32,8 +36,8 @@ class Home extends React.Component {
               <Route path="/Play" component={Play} />
               <Route path="/SongList" component={SongList} />
               <Redirect to="/Explore" /> 
+              {/* <Redirect to="/Login" />  */}
             </Switch>
-            
           </div>
           <div className="bottom-nav">
             <NavLink to="/Explore" activeClassName="active">发现</NavLink>

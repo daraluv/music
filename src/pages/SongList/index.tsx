@@ -23,7 +23,6 @@ class SongList extends React.Component<any> {
       listInfos: res.playlist,
       tracksList: res.playlist.tracks
     })
-
   }
 
   render() {

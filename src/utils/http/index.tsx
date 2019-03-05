@@ -12,6 +12,9 @@ axios.interceptors.request.use(async (config: req.HTTPReqConfig): Promise<any> =
   /** 给每个请求新增时间戳 */
   config.params = Object.assign({ _s: Date.now() }, config.params);
 
+  config.withCredentials = true;
+
+
   /** 注入token */
   // 逻辑待定
 
