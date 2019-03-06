@@ -3,7 +3,6 @@ import {MusicStore} from '../../store/MusicStore';
 import {inject, observer} from 'mobx-react';
 import { toJS } from 'mobx';
 import SongCover from './SongCover';
-
 import MusicInfos from './MusicInfos';
 import { withRouter } from 'react-router';
 import './style.scss';
@@ -28,8 +27,9 @@ class Playing extends React.Component <any>{
       if(this.props.location.state) {
          if(this.props.location.state.id) {
            id = this.props.location.state.id;
-           console.log('接收的歌曲id',id)
+           console.log('接收的歌曲id',this.props.location.state)
            MusicStore.getSongUrl(id);//405998841
+           MusicStore.changePlayState(true);
          }
       };
     }
@@ -41,8 +41,8 @@ class Playing extends React.Component <any>{
       console.log(0,MusicStore)
       return (
         <div className='playing-wrapper'>
-          <MusicInfos />
-          <SongCover />
+          <MusicInfos infos={this.props.location.state}/>
+          <SongCover coverUrl={this.props.location.state.cover}/>
         </div>
       )
     }

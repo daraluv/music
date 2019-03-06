@@ -27,6 +27,12 @@ export class MusicStore {
         list: []
     };
 
+    @action
+    public changePlayState = (status: boolean) => {
+        this.playState.isPlaying = status;
+        console.log('播放状态',status)
+    }
+
     //获取歌曲信息
     @action
     public getSongUrl = async (id: number) => {

@@ -8,24 +8,25 @@ type IProps = {
   switchPlayState: React.MouseEventHandler<HTMLLIElement>
 }
 
+
 const ControlBtn: React.SFC<IProps> = props => {
-  return (
-    <div className='control-content'>
-      <div className="btn-group">
-        <i onClick={props.switchPrevSong} className='icon-prev'>
-        </i>
-        {props.isPlaying ? (
-          <i onClick={props.switchPlayState} className='icon-playing'>
+    return (
+      <div className='control-content'>
+        <div className="btn-group">
+          <i onClick={props.switchPrevSong} className='icon-prev'>
           </i>
-        ) : (
-          <i onClick={props.switchPlayState} className={'icon-pause'}>
+          {props.isPlaying ? (
+            <i onClick={props.switchPlayState} className={'icon-pause'}>
+            </i>
+          ) : (
+             <i onClick={props.switchPlayState} className='icon-playing'>
+             </i>
+          )}
+          <i onClick={props.switchNextSong} className={'icon-next'}>
           </i>
-        )}
-        <i onClick={props.switchNextSong} className={'icon-next'}>
-        </i>
+        </div>
       </div>
-    </div>
-  )
+    )
 }
 
 

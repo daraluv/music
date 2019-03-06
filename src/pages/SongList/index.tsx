@@ -45,7 +45,10 @@ class SongList extends React.Component<any> {
                 <Link className="list-items" key={i} to={{
                   pathname:  '/play',
                   state: {
-                    id:v.id
+                    id:v.id,
+                    cover:v.al.picUrl,
+                    name:v.name,
+                    artist:v.ar[0].name
                   }
                }}>       
                   <i className='rank-num'>{i}</i>

@@ -14,13 +14,18 @@ interface InjectedProps extends Props {
 @inject('MusicStore')
 @observer
 class Player extends React.Component <any>{
+  
+    audio:any= null;
+
     get injected() {
       return this.props as InjectedProps;
     }
 
     //是否正在播放
     getIsPlaying = () => {
-      return false;
+      const { MusicStore } = this.injected;
+      console.log('获取的',MusicStore.playState.isPlaying)
+      return MusicStore.playState.isPlaying;
     }
 
     //上一曲
@@ -34,16 +39,21 @@ class Player extends React.Component <any>{
     }
 
     handleSwitchPlayState = () => {
-      console.log('234',this.refs.audio)
-      if (this.refs.audio) {
-        const isPlaying = this.getIsPlaying()
+      const { MusicStore } = this.injected;
+      const isPlaying = this.getIsPlaying();
+     
+      if (this.audio) {
         if (isPlaying) {
-          // this.refs.audio.play()
+          this.audio.pause();
+          MusicStore.changePlayState(false);
         } else {
-          // this.refs.audio.pause()
+          this.audio.play();
+          MusicStore.changePlayState(true);
         }
       }
     }
+
+
 
     render() {
       const { MusicStore } = this.injected;
@@ -54,7 +64,7 @@ class Player extends React.Component <any>{
             switchPrevSong={this.handleSwitchPrev}
             switchNextSong={this.handleSwitchNext}
             switchPlayState={this.handleSwitchPlayState}/>
-           <audio ref="audio" src={MusicStore.songInfos.url} autoPlay={true} />
+           <audio ref={ref => { this.audio = ref}} src={MusicStore.songInfos.url} autoPlay={true} />
         </div>
       )
     }

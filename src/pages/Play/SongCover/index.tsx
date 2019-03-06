@@ -1,15 +1,16 @@
 import * as React from 'react';
 import './style.scss';
 
-class SongCover extends React.Component {
+class SongCover extends React.Component<any> {
     componentDidMount() {
      
     }
   
     render() {
+      console.log("封面",this.props)
       return (
         <div className="cover-box">
-          <img className="cover-img" src="https://p2.music.126.net/B-uIF_a41n8Gc6ZQc9-Tyw==/109951163851436082.jpg"/>
+          <img className="cover-img" src={this.props.coverUrl}/>
         </div>
       )
     }
