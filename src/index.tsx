@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
-import Home from './pages/Home';
+import App from './App'
 
 ReactDOM.render(
-  <Home />,
+  <App />,
   document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();

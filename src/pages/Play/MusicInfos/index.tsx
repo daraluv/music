@@ -20,10 +20,12 @@ class MusicInfos extends React.Component<any>{
     return (
       <div className='top-infos'>
         <div onClick={this.goBack}>
-          <i className="iconfont-ncm">返回></i>
+          <i className="iconfont-ncm"> > </i>
         </div>
-        <div className='infos-name'>{name}</div>
-        <div className='infos-artists'>{artist}</div>
+        <div className='mid-title'>
+          <div className='infos-name'>{name}</div>
+          <div className='infos-artists'>{artist}</div>
+        </div>
       </div>
     )
   }

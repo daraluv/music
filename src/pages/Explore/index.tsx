@@ -11,7 +11,7 @@ class Explore extends React.Component {
 
   render() {
     return (
-      <div className="home_container">
+      <div className="explore-container">
         <div className="search-content">
           <input type="text" defaultValue="最新歌曲"/>
         </div>
@@ -19,7 +19,7 @@ class Explore extends React.Component {
           <NavLink to="/Explore/Recommend" activeClassName="active">个性推荐</NavLink>
           <NavLink to="/Explore/Radio" activeClassName="active">主播电台</NavLink>
         </div>
-        <div className="content">
+        <div className="explore-content">
           <Route exact path="/Explore" render={() => <Redirect to="/Explore/Recommend" />} />
           <Route exact path="/Explore/recommend" component={Recommend} />
           <Route exact path="/Explore/Radio" component={Radio} />

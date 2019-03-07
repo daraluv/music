@@ -6,6 +6,7 @@ import SongCover from './SongCover';
 import MusicInfos from './MusicInfos';
 import { withRouter } from 'react-router';
 import './style.scss';
+import { url } from 'inspector';
 
 interface Props {}
 interface InjectedProps extends Props {
@@ -38,11 +39,14 @@ class Playing extends React.Component <any>{
 
     render() {
       const { MusicStore } = this.injected;
-      console.log(0,MusicStore)
+      console.log(0,MusicStore.playState,this.props)
       return (
-        <div className='playing-wrapper'>
-          <MusicInfos infos={this.props.location.state}/>
-          <SongCover coverUrl={this.props.location.state.cover}/>
+        <div>
+          <div className='playing-wrapper'>
+            <MusicInfos infos={this.props.location.state}/>
+            <SongCover coverUrl={this.props.location.state.cover}/>
+          </div>
+          <div className='bg-img'style={{backgroundImage:`url(${this.props.location.state.cover})`}} ></div>
         </div>
       )
     }

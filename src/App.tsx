@@ -1,20 +1,20 @@
-import * as React from 'react';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Provider } from 'mobx-react';
+import Home from './pages/Home';
+import * as store from './store';
 
-import logo from './logo.svg';
 
-class App extends React.Component {
-  public render() {
+class App extends Component {
+  render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
+      <Provider {...store}>
+        <BrowserRouter>
+          <Switch>
+            <Route path="/" component={Home} />
+          </Switch>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }

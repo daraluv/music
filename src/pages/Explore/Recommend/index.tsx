@@ -32,7 +32,7 @@ class Recommend extends React.Component {
     const {lists} = this.state;
 
     return (
-      <div>
+      <div className='explore-wrapper'>
         <Banner >
         {this.bannerList.map((item: any, index: number) => {
           return (

@@ -20,7 +20,7 @@ class Player extends React.Component <any>{
     get injected() {
       return this.props as InjectedProps;
     }
-
+    
     //是否正在播放
     getIsPlaying = () => {
       const { MusicStore } = this.injected;
@@ -57,7 +57,7 @@ class Player extends React.Component <any>{
 
     render() {
       const { MusicStore } = this.injected;
-      console.log(0,MusicStore)
+    
       return (
         <div className='player-wrapper'>
             <ControlBtn isPlaying={this.getIsPlaying()}

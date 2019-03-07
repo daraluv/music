@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { BrowserRouter as Router, Route, NavLink, Redirect,Switch} from "react-router-dom";
-import { Provider } from 'mobx-react';
-import * as store from '../../store';
 import Explore from '../../pages/Explore';
 import Video from '../../pages/Video';
 import Mine from '../../pages/Mine';
@@ -14,18 +12,23 @@ import Player from '../../components/Player';
 import './style.scss'
 import './common.scss'
 
-class Home extends React.Component {
+class Home extends React.Component<any> {
+
+  componentWillReceiveProps(){
+    console.log('当前路由',this.props.history.location.pathname)
+    const isPlayPage = this.props.history.location.pathname;
+    isPlayPage =="/play" ? "" : "";
+  }
+
   componentDidMount() {
     document.title = 'music';
+   
   }
 
   render() {
-   
+    
     return (
-      <Provider {...store}>
-        <Router>
         <div className="home_container">
-          <Player/>
           <div className="content"> 
             <Switch>
               <Route path="/Explore" component={Explore} />
@@ -46,9 +49,8 @@ class Home extends React.Component {
             <NavLink to="/Friends" activeClassName="active">朋友</NavLink>
             <NavLink to="/Account" activeClassName="active">账号</NavLink>
           </div>
+          <Player/>
         </div>
-        </Router>
-      </Provider>
     )
   }
 }
